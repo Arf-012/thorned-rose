@@ -48,15 +48,11 @@ button {
   position: absolute;
   inset: 0;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: 72vh;
 
-  border: 2px solid black;
-}
-
-.scene-placeholder {
-  font-size: 2rem;
+  background-size: cover;
+  background-position: center;
 }
 
 
@@ -153,13 +149,11 @@ button {
   padding: 1rem;
 }
 
-.character-icon {
+.character-image {
   width: 140px;
   height: 140px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  object-fit: contain;
 
   border: 2px solid black;
 }

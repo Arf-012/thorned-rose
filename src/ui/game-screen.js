@@ -16,34 +16,46 @@ export function renderGameScreen () {
   const line = dialogue.lines[gameState.currentLine]
 
   app.innerHTML = `
-    <main class='game-screen'>
-      <section class='scene-background'>
-        <div class='scene-placeholder'>SCENE BACKGROUND</div>
-      </section>
+  <main class='game-screen'>
+    <img
+      class='scene-background'
+      src='/images/image.png'
+      alt=''
+    />
 
-      <section class='dialogue-choices'>${renderChoices(dialogue)}</section>
+    <section class='dialogue-choices'>
+      ${renderChoices(dialogue)}
+    </section>
 
-      <section class='dialogue-box'>
-        <div class='dialogue-area'>
-          <div class='character-area'>
-            <div class='character-icon'>ICON</div>
-          </div>
-
-          <div class='dialogue-content'>
-            <div class='speaker-name'>${line?.speaker ?? ''}</div>
-
-            <div class='line-separator-horizontal'></div>
-
-            <div class='dialogue-text'>${line?.text ?? ''}</div>
-          </div>
+    <section class='dialogue-box'>
+      <div class='dialogue-area'>
+        <div class='character-area'>
+          <img
+            class='character-image'
+            src='/images/character.jpg'
+            alt='Riku'
+          />
         </div>
 
-        <div class='line-separator-vertical'></div>
+        <div class='dialogue-content'>
+          <div class='speaker-name'>
+            ${line?.speaker ?? ''}
+          </div>
 
-        <aside class='mechanics-area'></aside>
-      </section>
-    </main>
-  `
+          <div class='line-separator-horizontal'></div>
+
+          <div class='dialogue-text'>
+            ${line?.text ?? ''}
+          </div>
+        </div>
+      </div>
+
+      <div class='line-separator-vertical'></div>
+
+      <aside class='mechanics-area'></aside>
+    </section>
+  </main>
+`
 
   bindChoiceEvents()
   bindDialogueEvents()
